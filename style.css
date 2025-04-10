@@ -1,0 +1,191 @@
+:root {
+  --colorBackground: rgba(235, 0, 255, 0.11);
+  --colorGradient: linear-gradient(45deg, #05000c, #542a9d);
+  --colorRose: #f41b75;
+  --colorBlue: #2298f3;
+  --shadow:0 0 30px #05000c
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', sans-serif;
+
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.all {
+  width: 100%;
+  height: 100vh;
+  background: var(--colorGradient);
+  position: relative;
+}
+/* clock-analog */
+.container-analog {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+}
+.clock-analog {
+  width: 100%;
+  height: 100%;
+  background: var(--colorBackground);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(40px);
+}
+.container-analog::before {
+  content: '';
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: var(--colorBlue);
+  top: -50px;
+  left: -100px;
+  z-index: -1;
+  border-radius: 50%;
+}
+.container-analog::after {
+  content: '';
+  width: 450px;
+  height: 100px;
+  position: absolute;
+  background: var(--colorRose);
+  bottom: 0px;
+  right: -150px;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.clock-analog .numbers span {
+  position: absolute;
+  inset: 5px;
+  text-align: center;
+  font-size: 50px;
+  transform: rotate(calc(90deg * var(--i)));
+}
+/* .clock-analog .numbers ::before {
+  content: '';
+  position: absolute;
+  inset: 60px;
+  border: 5px solid red;
+  border-radius: 50%;
+
+} */
+
+.clock-analog .needle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.clock-analog .needle i {
+  position: absolute;
+  
+  height: 50%;
+  background: white;
+  transform-origin: bottom;
+  box-shadow:var(--shadow);
+}
+
+.clock-analog .needle#hr i{
+  transform: scaleY(0.6);
+  width: 9px;
+}
+.clock-analog .needle#mn i{
+  transform: scaleY(0.8);
+  width: 6px;
+  
+}
+.clock-analog .needle#sc i{
+  transform: scaleY(0.9);
+  width: 4px;
+  background-color: var(--colorRose);
+}
+.center{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 2px solid white;
+  background: var(--colorBlue);
+  border-radius: 50%;
+  box-shadow:var(--shadow);
+  z-index: 5;
+}
+
+.circle{
+  position: absolute;
+  inset: 60px;
+  border: 5px solid var(--colorBackground);
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* clock-digital */
+.container-digital {
+  width: 800px;
+  height: 150px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.clock-digital {
+  width: 100%;
+  height: 100%;
+  background: var(--colorBackground);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(40px);
+}
+.container-digital::before {
+  content: '';
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  background: var(--colorRose);
+  top: -50px;
+  left: -50px;
+  z-index: -1;
+  border-radius: 10px;
+}
+.container-digital::after {
+  content: '';
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  background: var(--colorBlue);
+  bottom: -50px;
+  right: -50px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.clock-digital span {
+  font-size: 80px;
+  width: 120px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}

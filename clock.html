@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Horloge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <script src="app.js" defer></script>
+  <body>
+    <div class="all">
+      <!--analogique-->
+      <div class="container-analog">
+        <div class="clock-analog">
+          <div class="numbers">
+            <span style="--i: 0">XII</span>
+            <span style="--i: 1">III</span>
+            <span style="--i: 2">IV</span>
+            <span style="--i: 3">IX</span>
+          </div>
+          <div class="center"></div>
+          <div class="circle"></div>
+          <div class="needle" id="hr"><i></i></div>
+          <div class="needle" id="mn"><i></i></div>
+          <div class="needle" id="sc"><i></i></div>
+        </div>
+      </div>
+
+      <!--numerique-->
+      <div class="container-digital">
+        <div class="clock-digital">
+          <span id="hrs">00</span>
+          <span>:</span>
+          <span id="min">00</span>
+          <span>:</span>
+          <span id="sec">00</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
